@@ -21,6 +21,8 @@ import dev.tamboui.terminal.Terminal;
 import dev.tamboui.text.Line;
 import dev.tamboui.text.Span;
 import dev.tamboui.text.Text;
+import dev.tamboui.toolkit.app.ToolkitApp;
+import dev.tamboui.toolkit.element.Element;
 import dev.tamboui.tui.TuiConfig;
 import static dev.tamboui.tui.TuiConfig.DEFAULT_POLL_TIMEOUT;
 import static dev.tamboui.tui.TuiConfig.DEFAULT_RESIZE_GRACE_PERIOD;
@@ -46,7 +48,7 @@ import java.util.Collections;
  * Demonstrates line charts, scatter plots, and bar charts
  * with animated data updates.
  */
-public class ChartDemo {
+public class ChartDemo  extends ToolkitApp  {
 
     private Backend backend;    
     private TuiConfig config = null;    
@@ -62,14 +64,6 @@ public class ChartDemo {
     private long frameCount = 0;
     private double time = 0;
 
-    /**
-     * Demo entry point.
-     * @param args the CLI arguments
-     * @throws Exception on unexpected error
-     */
-    public static void main(String[] args) throws Exception {
-//        new ChartDemo().run();
-    }
 
     public ChartDemo(Backend backend) {
         this.backend = backend;
@@ -118,6 +112,7 @@ public class ChartDemo {
      *
      * @throws Exception if an error occurs
      */
+    @Override
      public void run() throws Exception {
         backend.enableRawMode();
         backend.enterAlternateScreen();
@@ -360,5 +355,10 @@ public class ChartDemo {
             .build();
 
         frame.renderWidget(footer, area);
+    }
+
+    @Override
+    protected Element render() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

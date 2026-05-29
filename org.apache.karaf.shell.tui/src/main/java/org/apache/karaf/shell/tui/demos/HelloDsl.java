@@ -102,9 +102,5 @@ public class HelloDsl extends ToolkitApp {
             text("Press 'q' to quit").dim()
         ).rounded();
     }
-
-    public void runApp(Backend backend) throws Exception {
-        new HelloDsl(backend).run();
-    }  
     
 }

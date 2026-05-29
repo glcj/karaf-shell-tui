@@ -24,6 +24,8 @@ import dev.tamboui.terminal.Terminal;
 import dev.tamboui.text.Line;
 import dev.tamboui.text.Span;
 import dev.tamboui.text.Text;
+import dev.tamboui.toolkit.app.ToolkitApp;
+import dev.tamboui.toolkit.element.Element;
 import dev.tamboui.tui.TuiConfig;
 import static dev.tamboui.tui.TuiConfig.DEFAULT_POLL_TIMEOUT;
 import static dev.tamboui.tui.TuiConfig.DEFAULT_RESIZE_GRACE_PERIOD;
@@ -45,7 +47,7 @@ import java.util.Collections;
 /**
  * Demo TUI application showcasing the Table widget.
  */
-public class TableDemo {
+public class TableDemo  extends ToolkitApp  {
 
     private Backend backend;    
     private TuiConfig config = null;       
@@ -92,19 +94,11 @@ public class TableDemo {
     }
 
     /**
-     * Demo entry point.
-     * @param args the CLI arguments
-     * @throws Exception on unexpected error
-     */
-    public static void main(String[] args) throws Exception {
-//        new TableDemo().run();
-    }
-
-    /**
      * Runs the demo application.
      *
      * @throws Exception if an error occurs
      */
+    @Override
      public void run() throws Exception {
 //        try (Backend backend = BackendFactory.create()) {
             backend.enableRawMode();
@@ -348,5 +342,10 @@ public class TableDemo {
             .build();
 
         frame.renderWidget(footer, area);
+    }
+
+    @Override
+    protected Element render() {
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 }

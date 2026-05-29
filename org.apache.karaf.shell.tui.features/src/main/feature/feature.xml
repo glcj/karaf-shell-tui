@@ -21,12 +21,13 @@
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.4.0">
 
     <feature name='org.apache.karaf.shell.tamboui' description='${project.name}' version='${project.version}'>
+        <feature>spifly</feature>
         <bundle>wrap:mvn:org.apache.karaf.shell.tamboui/org.apache.karaf.shell.tamboui/${project.version}/$Bundle-ManifestVersion=&quot;2&quot;,!</bundle>
     </feature>
     
     <feature name='${project.artifactId}'  description='${project.name}' version="${project.version}">
         <details>${project.description}</details>        
-        <feature>spifly</feature>
+
         <feature version="${project.version}">org.apache.karaf.shell.tamboui</feature>
         <conditional>
             <condition>shell</condition>
