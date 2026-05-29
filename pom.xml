@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     
+        
+  
+  
+  <modelVersion>4.0.0</modelVersion>
+         
+  
+  
+  <groupId>org.apache.karaf.shell.tui</groupId>
+         
+  
+  
+  <artifactId>karaf-shell-tui</artifactId>
+          
+  
+  
+  <version>1.0-SNAPSHOT</version>
+          
+  
+  
+  <packaging>pom</packaging>
+          
+  
+  
+  <properties>
+                    
+    
+    
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            
+    
+    <osgi.version>8.0.0</osgi.version>
+            
+    
+    <tamboui.version>0.3.0</tamboui.version>
+            
+    
+    <jline.version>3.30.9</jline.version>
+            
+    
+    <karaf.version>4.4.11</karaf.version>
+          
+  
+  </properties>
+      
+  
+  
+  <modules>
+              
+    
+    
+    <module>org.apache.karaf.shell.tamboui</module>
+              
+    
+    
+    <module>org.apache.karaf.shell.tui</module>
+    <module>org.apache.karaf.shell.tui.features</module>
+  </modules>
+    
+
+</project>
