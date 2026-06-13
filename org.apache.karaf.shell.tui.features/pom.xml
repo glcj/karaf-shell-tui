@@ -21,10 +21,32 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-    <artifactId>karaf-shell-tui</artifactId>
-    <groupId>org.apache.karaf.shell.tui</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+        <artifactId>karaf-shell-tui</artifactId>
+        <groupId>org.apache.karaf.shell.tui</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    
+    <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>    
+    
+    <developers>
+        <developer>
+          <name>César García</name>
+          <email>cesar.garcia@ceos.com.ve</email>
+          <organization>Sonatype</organization>
+          <organizationUrl>http://www.ceos.com.ve</organizationUrl>
+        </developer>
+    </developers>
+    
+    <scm>
+      <connection>scm:git:git://github.com/glcj/karaf-shell-tui.git</connection>
+      <developerConnection>scm:git:ssh://github.com:glcj/karaf-shell-tui.git</developerConnection>
+      <url>http://github.com/glcj/karaf-shell-tui/tree/main</url>
+    </scm>             
 
     <groupId>org.apache.karaf.shell.tui.feature</groupId>
     <artifactId>org.apache.karaf.shell.tui.features</artifactId>
@@ -32,7 +54,7 @@
     <packaging>feature</packaging>
 
     <name>Apache Karaf :: Shell tui/features</name>
-    <description>org.apache.karaf.shell.tui.feature details</description>
+    <description>Set of library features and deployable examples in Karaf.</description>
 
     <build>
         <pluginManagement>
@@ -73,6 +95,32 @@
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>3.1.3</version>
                 </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.4.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.12.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-docs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>                  
             </plugins>
         </pluginManagement>
         <plugins>
