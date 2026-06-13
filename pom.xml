@@ -6,12 +6,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.karaf.shell.tui</groupId>
     <artifactId>karaf-shell-tui</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
 
@@ -24,14 +24,14 @@
           <name>César García</name>
           <email>cesar.garcia@ceos.com.ve</email>
           <organization>CEOS Automatización, C.A.</organization>
-          <organizationUrl>http://www.ceos.com.ve</organizationUrl>
+          <organizationUrl>https://www.ceos.com.ve</organizationUrl>
         </developer>
     </developers>
     
     <scm>
-      <connection>scm:git:git://github.com/glcj/karaf-shell-tui.git</connection>
-      <developerConnection>scm:git:ssh://github.com:glcj/karaf-shell-tui.git</developerConnection>
-      <url>http://github.com/glcj/karaf-shell-tui/tree/main</url>
+      <connection>scm:git:https://github.com/glcj/karaf-shell-tui.git</connection>
+      <developerConnection>scm:git:ssh://git@github.com/glcj/karaf-shell-tui.git</developerConnection>
+      <url>https://github.com/glcj/karaf-shell-tui/tree/main</url>
     </scm>    
 
     <packaging>pom</packaging>
@@ -42,6 +42,13 @@
         <tamboui.version>0.3.0</tamboui.version>
         <jline.version>3.30.9</jline.version>
         <karaf.version>4.4.11</karaf.version>
+        <central.publishing.plugin.version>0.9.0</central.publishing.plugin.version>
+        <maven.gpg.plugin.version>3.2.8</maven.gpg.plugin.version>
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <central.publishing.serverId>central</central.publishing.serverId>
+        <central.publishing.autoPublish>false</central.publishing.autoPublish>
+        <central.publishing.waitUntil>validated</central.publishing.waitUntil>
+        <central.publishing.skipPublishing>false</central.publishing.skipPublishing>
     </properties>
   
     <modules>
@@ -49,5 +56,46 @@
         <module>org.apache.karaf.shell.tui</module>      
         <module>org.apache.karaf.shell.tui.features</module>              
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>${central.publishing.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>${central.publishing.serverId}</publishingServerId>
+                    <autoPublish>${central.publishing.autoPublish}</autoPublish>
+                    <waitUntil>${central.publishing.waitUntil}</waitUntil>
+                    <skipPublishing>${central.publishing.skipPublishing}</skipPublishing>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven.gpg.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

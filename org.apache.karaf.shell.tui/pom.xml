@@ -23,13 +23,13 @@
     <parent>
         <artifactId>karaf-shell-tui</artifactId>
         <groupId>org.apache.karaf.shell.tui</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
   
     <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
     </licenses>  
   
@@ -38,20 +38,20 @@
           <name>César García</name>
           <email>cesar.garcia@ceos.com.ve</email>
           <organization>CEOS Automatización, C.A.</organization>
-          <organizationUrl>http://www.ceos.com.ve</organizationUrl>
+          <organizationUrl>https://www.ceos.com.ve</organizationUrl>
         </developer>
     </developers>
     
     <scm>
-      <connection>scm:git:git://github.com/glcj/karaf-shell-tui.git</connection>
-      <developerConnection>scm:git:ssh://github.com:glcj/karaf-shell-tui.git</developerConnection>
-      <url>http://github.com/glcj/karaf-shell-tui/tree/main</url>
+      <connection>scm:git:https://github.com/glcj/karaf-shell-tui.git</connection>
+      <developerConnection>scm:git:ssh://git@github.com/glcj/karaf-shell-tui.git</developerConnection>
+      <url>https://github.com/glcj/karaf-shell-tui/tree/main</url>
     </scm>     
 
     <groupId>org.apache.karaf.shell.tui</groupId>
     <artifactId>org.apache.karaf.shell.tui</artifactId>
     <packaging>bundle</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     
     <name>Apache Karaf :: Shell tui/demo</name>
     <description>Examples of Tamboui executable from the Karaf shell.</description>
@@ -90,7 +90,7 @@
         <dependency>
             <groupId>org.apache.karaf.shell.tamboui</groupId>
             <artifactId>org.apache.karaf.shell.tamboui</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -168,7 +168,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>              
+            </plugin>                           
         </plugins>
     </build>
 
