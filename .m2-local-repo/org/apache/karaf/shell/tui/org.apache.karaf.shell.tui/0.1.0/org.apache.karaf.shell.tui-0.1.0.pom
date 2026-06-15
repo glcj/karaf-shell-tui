@@ -23,13 +23,13 @@
     <parent>
         <artifactId>karaf-shell-tui</artifactId>
         <groupId>org.apache.karaf.shell.tui</groupId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>0.1.0</version>
     </parent>
 
     <groupId>org.apache.karaf.shell.tui</groupId>
     <artifactId>org.apache.karaf.shell.tui</artifactId>
     <packaging>bundle</packaging>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.0</version>
     
     <name>Apache Karaf :: Shell tui/demo</name>
     <description>Provides the OSGi tui commands</description>
@@ -84,7 +84,7 @@
         <dependency>
             <groupId>org.apache.karaf.shell.tamboui</groupId>
             <artifactId>org.apache.karaf.shell.tamboui</artifactId>
-            <version>0.1.1-SNAPSHOT</version>
+            <version>0.1.0</version>
         </dependency>
     </dependencies>
 

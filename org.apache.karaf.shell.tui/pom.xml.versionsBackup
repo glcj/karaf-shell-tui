@@ -23,30 +23,23 @@
     <parent>
         <artifactId>karaf-shell-tui</artifactId>
         <groupId>org.apache.karaf.shell.tui</groupId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.karaf.shell.tui</groupId>
     <artifactId>org.apache.karaf.shell.tui</artifactId>
     <packaging>bundle</packaging>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     
     <name>Apache Karaf :: Shell tui/demo</name>
     <description>Provides the OSGi tui commands</description>
-    
-    <licenses>
-      <license>
-        <name>The Apache License, Version 2.0</name>
-        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      </license>
-    </licenses>      
     
     <!-- Distribution Management tells Maven *where* to deploy -->
     <distributionManagement>
         <repository>
           <id>github</id>
           <name>karaf-shell-tui</name>
-          <url>https://maven.pkg.github.com/glcj/karaf-shell-tui</url>
+          <url>https://github.com/glcj/karaf-shell-tui</url>
         </repository>
     </distributionManagement>        
 
@@ -84,7 +77,7 @@
         <dependency>
             <groupId>org.apache.karaf.shell.tamboui</groupId>
             <artifactId>org.apache.karaf.shell.tamboui</artifactId>
-            <version>0.1.1-SNAPSHOT</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -161,6 +154,20 @@
                         <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>  
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.2.8</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
                         </goals>
                     </execution>
                 </executions>
