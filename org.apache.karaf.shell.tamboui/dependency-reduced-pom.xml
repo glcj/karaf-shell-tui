@@ -3,13 +3,12 @@
   <parent>
     <artifactId>karaf-shell-tui</artifactId>
     <groupId>org.apache.karaf.shell.tui</groupId>
-    <version>0.1.0</version>
+    <version>0.5.0</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.apache.karaf.shell.tamboui</groupId>
   <artifactId>org.apache.karaf.shell.tamboui</artifactId>
   <name>Apache Karaf :: Shell tui/tamboui</name>
-  <version>0.1.0</version>
   <description>org.apache.karaf.shell.tamboui OSGi bundle project.</description>
   <licenses>
     <license>
@@ -152,7 +151,7 @@
     <dependency>
       <groupId>dev.tamboui</groupId>
       <artifactId>tamboui-jline3-backend</artifactId>
-      <version>0.3.0</version>
+      <version>0.5.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -171,11 +170,11 @@
   </distributionManagement>
   <properties>
     <maven-bundle-plugin.version>5.1.9</maven-bundle-plugin.version>
-    <servicemix.osgi.source.version>${tamboui.version}</servicemix.osgi.source.version>
     <pkgGroupId>dev.tamboui</pkgGroupId>
-    <pkgVersion>${tamboui.version}</pkgVersion>
-    <servicemix.osgi.export.pkg>dev.tamboui</servicemix.osgi.export.pkg>
     <pkgArtifactId>tamboui</pkgArtifactId>
+    <pkgVersion>${tamboui.version}</pkgVersion>
+    <servicemix.osgi.source.version>${tamboui.version}</servicemix.osgi.source.version>
+    <servicemix.osgi.export.pkg>dev.tamboui</servicemix.osgi.export.pkg>
     <servicemix.osgi.import.pkg>javax.activation,
             javax.xml*,
             org.w3c.dom,
