@@ -23,12 +23,11 @@
     <parent>
         <artifactId>karaf-shell-tui</artifactId>
         <groupId>org.apache.karaf.shell.tui</groupId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>${project.version}</version>
     </parent>
 
     <groupId>org.apache.karaf.shell.tui.feature</groupId>
     <artifactId>org.apache.karaf.shell.tui.features</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>Apache Karaf :: Shell tui/features</name>

@@ -25,12 +25,11 @@
     <parent>
         <artifactId>karaf-shell-tui</artifactId>
         <groupId>org.apache.karaf.shell.tui</groupId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>${project.version}</version>
     </parent>
 
     <groupId>org.apache.karaf.shell.tamboui</groupId>
     <artifactId>org.apache.karaf.shell.tamboui</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Apache Karaf :: Shell tui/tamboui</name>
